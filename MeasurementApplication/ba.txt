@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO.Ports;
 using System.Threading;
 
@@ -10,22 +10,23 @@ namespace MyApp
         static void Main(string[] args)
         {
             //set variables MANUALLY
-            int baudRate = 16000000;
-            StopBits stopBits = StopBits.None;
+            int baudRate = 9600;
+            StopBits stopBits = StopBits.Two;
             Parity parity = Parity.None;
             Handshake portHandshake = Handshake.None;
 
-            int readTimeout = 500;
-            int writeTimeout = 500;
+            //int readTimeout = 500;
+            //int writeTimeout = 500;
 
             //initialize port
             SerialPort devicePort = new SerialPort();
+            devicePort.PortName = "COM4";
             devicePort.BaudRate = baudRate;
             devicePort.Parity = parity;
             devicePort.StopBits = stopBits;
             devicePort.Handshake = portHandshake;
-            devicePort.ReadTimeout = readTimeout;
-            devicePort.WriteTimeout = writeTimeout;
+            //devicePort.ReadTimeout = readTimeout;
+            //devicePort.WriteTimeout = writeTimeout;
 
             //try open port
             try
@@ -51,7 +52,7 @@ namespace MyApp
                     string message = devicePort.ReadLine();
                     Console.WriteLine(message);
                 }
-                catch (TimeoutException) { Console.WriteLine("Error REDING port!"); }
+                catch (TimeoutException) { Console.WriteLine("Error READING port!"); }
             }
         }
     }
