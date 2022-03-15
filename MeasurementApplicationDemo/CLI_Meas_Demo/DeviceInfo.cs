@@ -5,10 +5,7 @@ using System.Text;
 
 namespace GUI_Meas_Demo.Model
 {
-    /// <summary>
-    /// class for storing device info (used for mobilisation)
-    /// </summary>
-    public class DeviceInfo
+    class DeviceInfo
     {
         private int _baudRate;
         private StopBits _stopBits;

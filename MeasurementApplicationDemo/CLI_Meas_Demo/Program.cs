@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_Meas_Demo.Model;
+using System;
 using System.IO.Ports;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,16 +17,27 @@ namespace CLI_Meas_Demo
             Parity parity = Parity.None;
             Handshake portHandshake = Handshake.None;
 
+
+            DeviceInfo deviceInfo = new DeviceInfo();
+            deviceInfo.BaudRate = 9600;
+            deviceInfo.StopBits = StopBits.One;
+            deviceInfo.Parity = Parity.None;
+            deviceInfo.Handshake = Handshake.None;
+
+            //save and read device info (testing purpuse)
+            DeviceInfoManager.SaveDeviceInfo(@"C:\Users\User\Downloads\myDeviceInfo.json", deviceInfo);
+            deviceInfo = DeviceInfoManager.GetDeviceInfo(@"C:\Users\User\Downloads\myDeviceInfo.json");
+
+
             //initialize port
             SerialPort devicePort = new SerialPort();
             devicePort.PortName = portName;
-            devicePort.BaudRate = baudRate;
-            devicePort.Parity = parity;
-            devicePort.StopBits = stopBits;
-            devicePort.Handshake = portHandshake;
+            devicePort.BaudRate = deviceInfo.BaudRate;
+            devicePort.Parity = deviceInfo.Parity;
+            devicePort.StopBits = deviceInfo.StopBits;
+            devicePort.Handshake = deviceInfo.Handshake;
 
             //try open port
-
             while (true)
             {
                 try
@@ -65,6 +77,20 @@ namespace CLI_Meas_Demo
             Console.ForegroundColor = color;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public static void WriteComportList()
+        {
+            // Get a list of serial port names.
+            string[] ports = SerialPort.GetPortNames();
+
+            Console.WriteLine("The following serial ports were found:");
+
+            // Display each port name to the console.
+            foreach (string port in ports)
+            {
+                Console.WriteLine(port);
+            }
         }
     }
 }
