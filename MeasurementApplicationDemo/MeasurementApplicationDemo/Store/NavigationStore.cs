@@ -15,7 +15,17 @@ namespace GUI_Meas_Demo.Stores
             set
             {
                 _currentViewModel = value;
+                OnCurrentViewModelChanged();
             }
         }
+
+        public event Action CurrentViewModelChanged;
+
+        private void OnCurrentViewModelChanged()
+        {
+            CurrentViewModelChanged?.Invoke();
+        }
+
+        
     }
 }

@@ -36,7 +36,7 @@
                 Margin="5"
                 Content="Confirm" 
                 Command="{Binding ConfirmCommand}"
-                IsEnabled="True"/>
+                IsEnabled="{Binding IsConfirmButtonEnabled}"/>
 
     </Grid>
 

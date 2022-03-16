@@ -42,7 +42,7 @@
                     Content="Confirm"
                     Command="{Binding ConfirmCommand}"
                     Width="140"
-                    IsEnabled="False"/>
+                    IsEnabled="{Binding IsConfirmButtonEnabled}"/>
 
             <TextBlock Grid.Row="3"
                    VerticalAlignment="Bottom"

@@ -1,5 +1,6 @@
 ﻿using GUI_Meas_Demo.Command;
 using GUI_Meas_Demo.Model;
+using GUI_Meas_Demo.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,12 +11,12 @@ using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
 {
-    class ChooseComportViewModel : ViewModelBase
+    class ChooseComportViewModel : ViewModelBase, IConfirmButtonViewModel
     {
         #region fields
         private ObservableCollection<string> _comportList = new ObservableCollection<string>();
         private PortManager _portManager;
-        private bool _isButtonEnabled = false;
+        private bool _isButtonEnabled = true;
         #endregion
 
         #region methods
@@ -25,31 +26,46 @@ namespace GUI_Meas_Demo.ViewModel
             {
                 this._comportList.Add(item);
             }
+
+            if (_comportList.Count <= 0) { Notification.Show("Error", "No comports found! Please instert device", Notifications.Wpf.NotificationType.Error); }
         }
 
         #region ctor
-        public ChooseComportViewModel(PortManager aPortManger)
+        public ChooseComportViewModel(PortManager portManager, NavigationStore navigationStore, Func<DeviceSettingsViewModel> createDeviceSettingsViewModel)
         {
-            _portManager = aPortManger;
+            this._portManager = portManager;
             UpdateComportList();
-            ConfirmCommand = new ConfirmComportCommand(this);
+            SelectedCommand = new EnableConfirmButtonCommand(this);
+            ConfirmCommand = new NavigateCommand(navigationStore, createDeviceSettingsViewModel);
         }
         #endregion
 
         public void ListBoxSelect()
         {
-            IsButtonEnabled = true;
+            IsConfirmButtonEnabled = true;
         }
         #endregion methods
 
         #region commands
         public ICommand ConfirmCommand { get; }
+        public ICommand SelectedCommand { get; }
         #endregion
 
         #region properties
         public IEnumerable<string> ComportList => _comportList;
-        public bool IsButtonEnabled { get => _isButtonEnabled; set { _isButtonEnabled = value; OnPropertyChanged(nameof(IsButtonEnabled)); } }
-        public string ListBoxCurrentSelected { get => _portManager.PortName; set { _portManager.PortName = value; OnPropertyChanged(nameof(ListBoxCurrentSelected)); } }
+        public bool IsConfirmButtonEnabled { get => _isButtonEnabled; set { _isButtonEnabled = value; OnPropertyChanged(nameof(IsConfirmButtonEnabled)); } }
+        public string ListBoxCurrentSelected 
+        { 
+            get => _portManager.PortName; 
+            set 
+            { 
+                _portManager.PortName = value;
+
+                OnPropertyChanged(nameof(ListBoxCurrentSelected)); 
+            } 
+        }
+
+        public bool IsConfirmButtonRequirementsMet => _portManager.IsRequiredInfoSet();
         #endregion
     }
 }

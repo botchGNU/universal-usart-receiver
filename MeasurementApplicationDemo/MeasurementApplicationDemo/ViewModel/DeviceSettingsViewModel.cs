@@ -1,5 +1,6 @@
 ﻿using GUI_Meas_Demo.Command;
 using GUI_Meas_Demo.Model;
+using GUI_Meas_Demo.Stores;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -10,18 +11,19 @@ using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
 {
-    class DeviceSettingsViewModel : ViewModelBase
+    class DeviceSettingsViewModel : ViewModelBase, IConfirmButtonViewModel
     {
         #region fields
         private PortManager _portManager;
+        private bool _isButtonEnabled = false;
         #endregion
 
         #region ctor
-        public DeviceSettingsViewModel(PortManager aPortManager)
+        public DeviceSettingsViewModel(PortManager aPortManager, NavigationStore navigationStore,Func<DashboardViewModel> createDashbaordViewModel)
         {
             _portManager = aPortManager;
-            ConfirmCommand = new ConfirmDeviceSettingsCommand();
-            SetCommand = new SetDeviceSettingsCommand();
+            ConfirmCommand = new NavigateCommand(navigationStore, createDashbaordViewModel);
+            SetCommand = new SetDeviceSettingsCommand(this);
         }
         #endregion
 
@@ -38,8 +40,22 @@ namespace GUI_Meas_Demo.ViewModel
         #endregion
 
         #region commands
-        ICommand ConfirmCommand { get;  }
-        ICommand SetCommand { get; }
+        public ICommand ConfirmCommand { get;  }
+        public ICommand SetCommand { get; }
+        #endregion
+
+        #region properties
+        public bool IsConfirmButtonEnabled 
+        {
+            get => _isButtonEnabled; 
+            set 
+            { 
+                _isButtonEnabled = value; 
+                OnPropertyChanged(nameof(IsConfirmButtonEnabled)); 
+            } 
+        }
+
+        public bool IsConfirmButtonRequirementsMet => _portManager.IsRequiredInfoSet();
         #endregion
     }
 }

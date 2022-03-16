@@ -25,6 +25,7 @@ namespace GUI_Meas_Demo.View
             /*ChooseComportViewModel viewModel = new ChooseComportViewModel();
             DataContext = viewModel;*/
         }
+
     }
 
 }

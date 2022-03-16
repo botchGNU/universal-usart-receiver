@@ -22,7 +22,5 @@
 
         <ContentControl Content="{Binding CurrentViewModel}"/>
 
-        <view:ChooseComportView DataContext="{Binding CurrentViewModel}"/>
-
     </Grid>
 </Window>

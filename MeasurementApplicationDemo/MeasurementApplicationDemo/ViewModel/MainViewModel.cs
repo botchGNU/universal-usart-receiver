@@ -12,7 +12,16 @@ namespace GUI_Meas_Demo.ViewModel
         public MainViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
+
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
+
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
+
+
 
         public ViewModelBase CurrentViewModel { get => _navigationStore.CurrentViewModel; }
 

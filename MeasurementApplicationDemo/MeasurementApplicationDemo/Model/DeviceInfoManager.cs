@@ -18,13 +18,24 @@ namespace GUI_Meas_Demo.Model
         {
             string jsonString;
 
-            using (StreamReader streamReader = new StreamReader(path))
+            
+
+            try
             {
-                jsonString = streamReader.ReadToEnd();
-                streamReader.Close();
+                using (StreamReader streamReader = new StreamReader(path))
+                {
+                    jsonString = streamReader.ReadToEnd();
+                    streamReader.Close();
+                }
+
+                return JsonSerializer.Deserialize<DeviceInfo>(jsonString, _options);
+            }
+            catch (Exception)
+            {
+                return new DeviceInfo(); //return empty device info on failure
             }
 
-            return JsonSerializer.Deserialize<DeviceInfo>(jsonString, _options);
+            
         }
 
         public static void SaveDeviceInfo(string path, DeviceInfo deviceInfo)

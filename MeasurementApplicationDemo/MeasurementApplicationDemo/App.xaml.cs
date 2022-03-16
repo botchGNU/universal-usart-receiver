@@ -25,7 +25,8 @@ namespace MeasurementApplicationDemo
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel = new ChooseComportViewModel(_portManager);
+            _navigationStore.CurrentViewModel = new ChooseComportViewModel(_portManager, _navigationStore, CreateDeviceSettingsViewModel);
+
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_navigationStore)
@@ -34,6 +35,21 @@ namespace MeasurementApplicationDemo
             MainWindow.Show();
 
             base.OnStartup(e);
+        }
+
+        private DeviceSettingsViewModel CreateDeviceSettingsViewModel()
+        {
+            return new DeviceSettingsViewModel(_portManager, _navigationStore, CreateDashboardViewModel);
+        }
+
+        private DashboardViewModel CreateDashboardViewModel()
+        {
+            return new DashboardViewModel(_portManager);
+        }
+
+        private ChooseComportViewModel CreateChooseComportViewModel()
+        {
+            return new ChooseComportViewModel(_portManager, _navigationStore, CreateDeviceSettingsViewModel);
         }
     }
 }

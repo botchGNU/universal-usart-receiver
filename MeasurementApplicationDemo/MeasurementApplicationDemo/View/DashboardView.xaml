@@ -8,18 +8,22 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="1">
-            <Button Height="50"
+            <Button Height="40"
+                    Width="160"
                     Margin="10"
                     Content="{Binding ButtonControlContent}"
                     Background="{Binding ButtonControlBackground}"/>
             <Button Height="30"
                     Margin="10,0,10,10"
+                    Width="160"
                     Content="Export"/>
         </StackPanel>
+        
     </Grid>
+    
 </UserControl>
