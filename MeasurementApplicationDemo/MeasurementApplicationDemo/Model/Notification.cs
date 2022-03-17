@@ -1,13 +1,10 @@
 ﻿using Notifications.Wpf;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GUI_Meas_Demo.Model
 {
     public static class Notification
     {
-        public static void Show(string title, string message, Notifications.Wpf.NotificationType notificationType)
+        public static void Show(string title, string message, NotificationType notificationType)
         {
             var notificationManager = new NotificationManager();
 

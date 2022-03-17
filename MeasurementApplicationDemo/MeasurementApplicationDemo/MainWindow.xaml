@@ -18,6 +18,9 @@
             <DataTemplate DataType="{x:Type viewmodel:DeviceSettingsViewModel}">
                 <view:DeviceSettingsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:DashboardViewModel}">
+                <view:DashboardView/>
+            </DataTemplate>
         </Grid.Resources>
 
         <ContentControl Content="{Binding CurrentViewModel}"/>

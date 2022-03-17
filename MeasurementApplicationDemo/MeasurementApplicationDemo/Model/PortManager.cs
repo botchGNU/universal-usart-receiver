@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO.Ports;
-using System.Text;
 
 namespace GUI_Meas_Demo.Model
 {
@@ -31,7 +29,7 @@ namespace GUI_Meas_Demo.Model
         public bool IsRequiredInfoSet() //check if requiored info is set in order to open port
         {
             if (_port.BaudRate <= 0) { return false; }
-            if (String.IsNullOrEmpty(_port.PortName)){ return false; }
+            if (String.IsNullOrEmpty(_port.PortName)) { return false; }
             if (!IsDeviceInfoUpdated) { return false; }
 
             IsDeviceInfoUpdated = true;

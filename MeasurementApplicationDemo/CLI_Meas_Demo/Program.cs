@@ -2,7 +2,6 @@
 using System;
 using System.IO.Ports;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CLI_Meas_Demo
 {
@@ -37,6 +36,8 @@ namespace CLI_Meas_Demo
             devicePort.StopBits = deviceInfo.StopBits;
             devicePort.Handshake = deviceInfo.Handshake;
 
+            devicePort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+
             //try open port
             while (true)
             {
@@ -55,13 +56,20 @@ namespace CLI_Meas_Demo
             }
         }
 
+        private static void DataReceivedHandler(object sender,SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            //string indata = sp.ReadExisting();
+            ConsoleLine("received", ConsoleColor.Yellow);
+        }
+
         public static void readPortLoop(SerialPort devicePort)
         {
             while (devicePort.IsOpen)
             {
                 try
                 {
-                    
+
                     char message = (char)devicePort.ReadChar(); //read from device port
                     Console.Write(message); //print received char
                 }

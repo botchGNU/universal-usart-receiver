@@ -1,7 +1,4 @@
 ﻿using GUI_Meas_Demo.Stores;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GUI_Meas_Demo.ViewModel
 {
@@ -25,6 +22,6 @@ namespace GUI_Meas_Demo.ViewModel
 
         public ViewModelBase CurrentViewModel { get => _navigationStore.CurrentViewModel; }
 
-        
+
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Ports;
-using System.Text;
+﻿using System.IO.Ports;
 
 namespace GUI_Meas_Demo.Model
 {

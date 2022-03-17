@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO.Ports;
-using System.Text;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
@@ -54,15 +52,15 @@ namespace GUI_Meas_Demo.ViewModel
         #region properties
         public IEnumerable<string> ComportList => _comportList;
         public bool IsConfirmButtonEnabled { get => _isButtonEnabled; set { _isButtonEnabled = value; OnPropertyChanged(nameof(IsConfirmButtonEnabled)); } }
-        public string ListBoxCurrentSelected 
-        { 
-            get => _portManager.PortName; 
-            set 
-            { 
+        public string ListBoxCurrentSelected
+        {
+            get => _portManager.PortName;
+            set
+            {
                 _portManager.PortName = value;
 
-                OnPropertyChanged(nameof(ListBoxCurrentSelected)); 
-            } 
+                OnPropertyChanged(nameof(ListBoxCurrentSelected));
+            }
         }
 
         public bool IsConfirmButtonRequirementsMet => _portManager.IsRequiredInfoSet();
