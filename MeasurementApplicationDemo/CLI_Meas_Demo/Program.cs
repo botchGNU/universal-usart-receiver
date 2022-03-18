@@ -56,7 +56,7 @@ namespace CLI_Meas_Demo
             }
         }
 
-        private static void DataReceivedHandler(object sender,SerialDataReceivedEventArgs e)
+        private static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
             //string indata = sp.ReadExisting();
@@ -71,6 +71,9 @@ namespace CLI_Meas_Demo
                 {
 
                     char message = (char)devicePort.ReadChar(); //read from device port
+
+                    if (String.IsNullOrEmpty(message.ToString())) { Console.Write("empty"); }
+
                     Console.Write(message); //print received char
                 }
                 catch (OperationCanceledException) { ConsoleLine("[Error] Operation was cancelled! (Timeout)", ConsoleColor.Red); }

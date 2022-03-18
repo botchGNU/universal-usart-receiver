@@ -56,6 +56,16 @@ namespace GUI_Meas_Demo.Model
             }
         }
 
+        public void OpenPort()
+        {
+            _port.Open();
+        }
+
+        public int ReadChar()
+        {
+            return _port.ReadChar();
+        }
+
         public DeviceInfo Info { get => _info; set { _info = value; UpdateInfo(); } } //also updates port
         public string PortName { get => _port?.PortName; set => _port.PortName = value; }
         public bool IsDeviceInfoUpdated { get => _isDeviceInfoUpdated; set => _isDeviceInfoUpdated = value; }

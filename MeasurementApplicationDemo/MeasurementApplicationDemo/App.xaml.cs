@@ -10,20 +10,22 @@ namespace MeasurementApplicationDemo
     /// </summary>
     public partial class App : Application
     {
-        private readonly NavigationStore _navigationStore;
-        private PortManager _portManager;
+        private readonly NavigationStore _navStore;
+        private PortManager _portMan;
+        private MeasurementManager _measMan;
         public App()
         {
-            _portManager = new PortManager();
-            _navigationStore = new NavigationStore();
+            _portMan = new PortManager();
+            _navStore = new NavigationStore();
+            _measMan = new MeasurementManager(_portMan);
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel = new ChooseComportViewModel(_portManager, _navigationStore, CreateDeviceSettingsViewModel);
+            _navStore.CurrentViewModel = new ChooseComportViewModel(_portMan, _navStore, CreateDeviceSettingsViewModel);
 
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel(_navigationStore)
+                DataContext = new MainViewModel(_navStore)
             };
 
             MainWindow.Show();
@@ -33,17 +35,17 @@ namespace MeasurementApplicationDemo
 
         private DeviceSettingsViewModel CreateDeviceSettingsViewModel()
         {
-            return new DeviceSettingsViewModel(_portManager, _navigationStore, CreateDashboardViewModel);
+            return new DeviceSettingsViewModel(_portMan, _navStore, CreateDashboardViewModel);
         }
 
         private DashboardViewModel CreateDashboardViewModel()
         {
-            return new DashboardViewModel(_portManager);
+            return new DashboardViewModel(_measMan);
         }
 
         private ChooseComportViewModel CreateChooseComportViewModel()
         {
-            return new ChooseComportViewModel(_portManager, _navigationStore, CreateDeviceSettingsViewModel);
+            return new ChooseComportViewModel(_portMan, _navStore, CreateDeviceSettingsViewModel);
         }
     }
 }

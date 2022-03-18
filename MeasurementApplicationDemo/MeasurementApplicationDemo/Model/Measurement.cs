@@ -8,6 +8,7 @@ namespace GUI_Meas_Demo.Model
     {
         private int _value;
         private DateTime _timeStamp;
+        private const char SEP = ',';
 
         public Measurement(int value)
         {
@@ -15,7 +16,13 @@ namespace GUI_Meas_Demo.Model
             _value = value;
         }
 
-        public int Value { get => _value; set => }
+        public string Serialize()
+        {
+            return
+                $"German{SEP}{_timeStamp}{SEP}{_value}{SEP}";
+        }
+
+        public int Value { get => _value;}
         public DateTime TimeStamp { get => _timeStamp;}
     }
 }

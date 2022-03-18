@@ -14,16 +14,18 @@
 
         <StackPanel Grid.Column="1">
             <Button Height="40"
-                    Width="160"
-                    Margin="10"
-                    Content="{Binding ButtonControlContent}"
-                    Background="{Binding ButtonControlBackground}"/>
+                    Width="190"
+                    Margin="10,30,10,10"
+                    Command="{Binding ActionCommand}"
+                    Content="{Binding ActionButtonContent}"
+                    Background="{Binding ActionButtonColor}"/>
+
             <Button Height="30"
                     Margin="10,0,10,10"
-                    Width="160"
+                    Width="190"
                     Content="Export"/>
         </StackPanel>
-        
+
     </Grid>
     
 </UserControl>
