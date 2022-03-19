@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31727.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI_Meas_Demo", "MeasurementApplicationDemo\GUI_Meas_Demo.csproj", "{C895866D-A017-4564-AC6A-1E9B75465500}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI_Meas_Demo", "CLI_Meas_Demo\CLI_Meas_Demo.csproj", "{C07AD940-46F4-4253-9EB2-15C4423057A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI_Excel_Demo", "CLI_Excel_Demo\CLI_Excel_Demo.csproj", "{9C3E9C3C-EB5C-497D-9FD2-9247F42517E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C07AD940-46F4-4253-9EB2-15C4423057A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C07AD940-46F4-4253-9EB2-15C4423057A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C07AD940-46F4-4253-9EB2-15C4423057A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C3E9C3C-EB5C-497D-9FD2-9247F42517E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3E9C3C-EB5C-497D-9FD2-9247F42517E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3E9C3C-EB5C-497D-9FD2-9247F42517E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3E9C3C-EB5C-497D-9FD2-9247F42517E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
