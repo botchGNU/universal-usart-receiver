@@ -23,7 +23,8 @@
             <Button Height="30"
                     Margin="10,0,10,10"
                     Width="190"
-                    Content="Export"/>
+                    Content="Export"
+                    IsEnabled="{Binding ExportEnabled}"/>
         </StackPanel>
 
     </Grid>

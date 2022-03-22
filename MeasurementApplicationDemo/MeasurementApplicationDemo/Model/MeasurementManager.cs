@@ -1,70 +1,71 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GUI_Meas_Demo.Model
 {
     class MeasurementManager : INotifyPropertyChanged
     {
-
         #region fields
-        private ObservableCollection<Measurement> _measColl = new ObservableCollection<Measurement>();
+        private ObservableCollection<Measurement> _measColl;
         private PortManager _portMan;
-        private bool _measRunning = false;
+        private bool _measRunning;
+        private Thread _measThread;
         #endregion
-
         public MeasurementManager(PortManager portMan)
         {
             this._portMan = portMan;
+            _measRunning = false;
+            _measColl = new ObservableCollection<Measurement>();
         }
 
         #region methods
-        public void StartMeasure()
+
+        public void StartMeasureThread()
         {
-            try
-            {
-                IsRunning = true;           //just TEMPORARY bevor port opening for TESTING PURPOSE
-                _portMan.OpenPort();
-                Task.Run( () => MeasurementLoopAsync());
-            }
-            catch (Exception)
-            {
-                //throw;                //just TEMPORARY DISABLED for TESTING PURPOSE
-            }
+            _portMan.OpenPort();
+            IsRunning = true;
+            _measThread = new Thread(MeasurementLoopThread);
+            _measThread.Start();
         }
 
-        public void StopMeasure()
+        public void StopMeasureThread()
         {
+            // <- implement thread stop
             IsRunning = false;
+            _portMan.ClosePort();
         }
+        #endregion
 
-        private async Task MeasurementLoopAsync()
+        #region tasks/threads
+        private void MeasurementLoopThread()
         {
-            while (true) //requires token -> not immplemented yet
+            while (IsRunning)
             {
                 try
                 {
                     char receivedValue = (char)_portMan.ReadChar();
-
                     var newMeas = new Measurement(receivedValue);
                     MeasurementCollection.Add(newMeas);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    StopMeasure();
+                    Notification.Show("Error", e.Message , Notifications.Wpf.NotificationType.Error);
+                    StopMeasureThread();
                 }
             }
         }
+
+
         #endregion
 
         #region properties
         public ObservableCollection<Measurement> MeasurementCollection { get => _measColl; set => _measColl = value; }
-        public bool IsRunning 
-        { 
-            get => _measRunning; 
+        public bool IsRunning
+        {
+            get => _measRunning;
             set
             {
                 _measRunning = value;
@@ -80,6 +81,5 @@ namespace GUI_Meas_Demo.Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-
     }
 }
