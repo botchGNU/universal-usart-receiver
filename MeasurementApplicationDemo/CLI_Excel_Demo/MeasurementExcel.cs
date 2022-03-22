@@ -23,6 +23,12 @@ namespace CLI_Excel_Demo
         }
 
         public int Value { get => _value; }
-        public DateTime TimeStamp { get => _timeStamp; }
+
+        public string TimeStamp
+        {
+            get => _timeStamp.ToString();
+        }
+
+        //public DateTime TimeStamp { get => _timeStamp; }
     }
 }
