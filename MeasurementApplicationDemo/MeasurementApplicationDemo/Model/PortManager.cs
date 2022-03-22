@@ -56,9 +56,22 @@ namespace GUI_Meas_Demo.Model
             }
         }
 
+        public void ClosePort()
+        {
+            _port.Close();
+        }
+
         public void OpenPort()
         {
-            _port.Open();
+            try
+            {
+                _port.Open();
+            }
+            catch (Exception)
+            {
+                Notification.Show("Error", "Port could not be opened!", Notifications.Wpf.NotificationType.Error);
+            }
+            
         }
 
         public int ReadChar()
