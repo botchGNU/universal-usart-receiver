@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GUI_Meas_Demo.Model
@@ -28,7 +26,7 @@ namespace GUI_Meas_Demo.Model
             {
                 IsRunning = true;           //just TEMPORARY bevor port opening for TESTING PURPOSE
                 _portMan.OpenPort();
-                Task.Run( () => MeasurementLoopAsync());
+                Task.Run(() => MeasurementLoopAsync());
             }
             catch (Exception)
             {
@@ -62,9 +60,9 @@ namespace GUI_Meas_Demo.Model
 
         #region properties
         public ObservableCollection<Measurement> MeasurementCollection { get => _measColl; set => _measColl = value; }
-        public bool IsRunning 
-        { 
-            get => _measRunning; 
+        public bool IsRunning
+        {
+            get => _measRunning;
             set
             {
                 _measRunning = value;

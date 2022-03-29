@@ -1,20 +1,17 @@
-﻿using OfficeOpenXml;
+﻿using GUI_Meas_Demo.Model;
+using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
-using GUI_Meas_Demo.Model;
 
 namespace CLI_Excel_Demo
 {
     public static class ExcelConverter
     {
 
-        public static async Task ExportAsync( FileInfo fileName, ObservableCollection<Measurement> measColl)
+        public static async Task ExportAsync(FileInfo fileName, ObservableCollection<Measurement> measColl)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
@@ -45,7 +42,7 @@ namespace CLI_Excel_Demo
         {
             if (fileName.Exists)
             {
-               fileName.Delete();
+                fileName.Delete();
             }
         }
     }

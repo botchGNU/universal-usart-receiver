@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GUI_Meas_Demo.Model
 {
@@ -22,7 +20,7 @@ namespace GUI_Meas_Demo.Model
                 $"German{SEP}{_timeStamp}{SEP}{_value}{SEP}";
         }
 
-        public int Value { get => _value;}
-        public DateTime TimeStamp { get => _timeStamp;}
+        public int Value { get => _value; }
+        public DateTime TimeStamp { get => _timeStamp; }
     }
 }

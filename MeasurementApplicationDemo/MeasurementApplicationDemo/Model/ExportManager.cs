@@ -1,10 +1,7 @@
 ﻿using CLI_Excel_Demo;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Text;
 
 namespace GUI_Meas_Demo.Model
 {

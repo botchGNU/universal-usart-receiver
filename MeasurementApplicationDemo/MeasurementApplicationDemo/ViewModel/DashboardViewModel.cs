@@ -19,8 +19,8 @@ namespace GUI_Meas_Demo.ViewModel
         public ICommand ActionCommand { get; }
         #endregion
         #region properties
-        public string ActionButtonContent 
-        { 
+        public string ActionButtonContent
+        {
             get
             {
                 if (_measMan.IsRunning)

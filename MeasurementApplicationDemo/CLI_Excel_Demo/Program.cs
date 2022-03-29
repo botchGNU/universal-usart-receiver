@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -7,7 +6,7 @@ namespace CLI_Excel_Demo
 {
     public class Program
     {
-        
+
 
         static async Task Main(string[] args)
         {
