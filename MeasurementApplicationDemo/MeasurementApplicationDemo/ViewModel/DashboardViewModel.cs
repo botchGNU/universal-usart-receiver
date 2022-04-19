@@ -15,12 +15,13 @@ namespace GUI_Meas_Demo.ViewModel
         {
             this._measMan = measMan;
             ActionCommand = new ControlMeasurmentCommand(measMan, this);
+            ExportMeasCommand = new ExportCommand(_measMan);
             _actionButtonColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#32CD32"));
             _actionButtonContent = "Start Measurement";
         }
 
         #region Commands
-        public ICommand ExportCommand { get; }
+        public ICommand ExportMeasCommand { get; }
         public ICommand ActionCommand { get; }
         #endregion
         #region properties

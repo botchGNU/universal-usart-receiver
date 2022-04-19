@@ -20,7 +20,8 @@ namespace GUI_Meas_Demo.Model
                 $"German{SEP}{_timeStamp}{SEP}{_value}{SEP}";
         }
 
+        public string TimeStamp { get => _timeStamp.ToString(); }
+        //private DateTime TimeStamp { get => _timeStamp; }
         public int Value { get => _value; }
-        public DateTime TimeStamp { get => _timeStamp; }
     }
 }
