@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading;
@@ -72,6 +74,9 @@ namespace GUI_Meas_Demo.Model
                 OnPropertyChanged(propertyName: "IsRunning");
             }
         }
+
+ 
+
         #endregion
 
         #region events
