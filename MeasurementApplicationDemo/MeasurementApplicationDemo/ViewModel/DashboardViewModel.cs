@@ -1,7 +1,10 @@
 ﻿using GUI_Meas_Demo.Command;
 using GUI_Meas_Demo.Model;
+using System;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace GUI_Meas_Demo.ViewModel
 {
@@ -51,6 +54,18 @@ namespace GUI_Meas_Demo.ViewModel
             {
                 _exportEnabled = value;
                 OnPropertyChanged(nameof(ExportEnabled));
+            }
+        } 
+
+        public ImageSource DisplayImageSource
+        {
+            get
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"..\Resources\donotunplug.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
         }
 

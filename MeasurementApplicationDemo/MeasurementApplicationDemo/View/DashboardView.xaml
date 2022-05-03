@@ -7,28 +7,39 @@
              xmlns:view="clr-namespace:GUI_Meas_Demo.View"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="250"/>
-        </Grid.ColumnDefinitions>
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Grid Width="400" Height="400">
 
-        <StackPanel Grid.Column="1">
-            <Button Height="40"
+        <Grid Width="300" Height="150">
+            <StackPanel Grid.Row="1">
+                <Button Height="40"
                     Width="190"
                     Margin="10,30,10,10"
                     Command="{Binding ActionCommand}"
                     Content="{Binding ActionButtonContent}"
                     Background="{Binding ActionButtonColor}"/>
 
-            <Button Height="30"
+                <Button Height="30"
                     Margin="10,0,10,10"
                     Width="190"
                     Content="Export"
                     IsEnabled="{Binding ExportEnabled}"
                     Command="{Binding ExportMeasCommand}"/>
-        </StackPanel>
+
+
+
+            </StackPanel>
+        </Grid>
+        
+        
+        
+        <!--
+        <Image Source="{Binding DisplayImageSource}"
+               Grid.Row="2"
+               Margin="10"/>
+
+        -->
+
     </Grid>
     
 </UserControl>

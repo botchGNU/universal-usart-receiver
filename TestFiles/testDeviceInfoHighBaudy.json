@@ -1,0 +1,6 @@
+{
+  "BaudRate": 57600,
+  "StopBits": 1,
+  "Parity": 0,
+  "Handshake": 0
+}

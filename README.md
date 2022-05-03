@@ -7,7 +7,7 @@ Tool in order to receive and save measurement data over RS232
 - [X] Pause session
 - [X] Error- & info notifications
 - [X] Export as Microsoft Excel file
-- [ ] Live chart
+- [X] Excel Chart
 
 ## Usage
 
@@ -15,6 +15,12 @@ Tool in order to receive and save measurement data over RS232
 2. Plug in your measurement device (driver may be needed)
 3. Import device settings (as json)
 4. Start measurement
+
+## Bugs
+- [ ] Memory Leak
+- [ ] Redesign chart
+
+
 
 ## Used 
 
@@ -24,4 +30,4 @@ Tool in order to receive and save measurement data over RS232
 - [Notifications.Wpf](https://github.com/Federerer/Notifications.Wpf)
 
 
-	
+​	

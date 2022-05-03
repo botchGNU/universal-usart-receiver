@@ -4,6 +4,11 @@
 
 # ToDo
 
+## As team
+
+- Reports!!
+- Finally do the hardware!!
+
 ## Desktop
 
 - [X] Connect to port
