@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using GUI_Meas_Demo.Model;
+using System.Windows;
 
 namespace MeasurementApplicationDemo
 {

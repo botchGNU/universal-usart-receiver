@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using GUI_Meas_Demo.Command;
+using System.ComponentModel;
+using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
 {
@@ -9,5 +11,7 @@ namespace GUI_Meas_Demo.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public ICommand CloseCommand = new CloseCommand();
     }
 }

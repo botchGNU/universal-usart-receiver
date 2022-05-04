@@ -1,4 +1,6 @@
-﻿using GUI_Meas_Demo.ViewModel;
+﻿using GUI_Meas_Demo.Model;
+using GUI_Meas_Demo.ViewModel;
+using Notifications.Wpf;
 
 namespace GUI_Meas_Demo.Command
 {
@@ -14,6 +16,7 @@ namespace GUI_Meas_Demo.Command
         public override void Execute(object parameter)
         {
             if (viewModel.IsConfirmButtonRequirementsMet) { viewModel.IsConfirmButtonEnabled = true; }
+            //Notification.Show("tets", "test", NotificationType.Information);
         }
     }
 }

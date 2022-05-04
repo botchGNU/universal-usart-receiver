@@ -9,7 +9,6 @@ namespace GUI_Meas_Demo.Model
         private DeviceInfo _info;
         private SerialPort _port = new SerialPort();
 
-
         void UpdateInfo()
         {
             try

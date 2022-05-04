@@ -13,7 +13,7 @@ namespace GUI_Meas_Demo.ViewModel
         private PortManager _portManager;
         private bool _isButtonEnabled = false;
         #endregion
-
+        
         #region ctor
         public DeviceSettingsViewModel(PortManager aPortManager, NavigationStore navigationStore, Func<DashboardViewModel> createDashbaordViewModel)
         {

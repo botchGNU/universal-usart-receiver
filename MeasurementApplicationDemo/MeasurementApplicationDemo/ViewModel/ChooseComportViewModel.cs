@@ -14,7 +14,7 @@ namespace GUI_Meas_Demo.ViewModel
         #region fields
         private ObservableCollection<string> _comportList = new ObservableCollection<string>();
         private PortManager _portManager;
-        private bool _isButtonEnabled = true;
+        private bool _isButtonEnabled = false;
         #endregion
 
         #region methods
@@ -23,9 +23,11 @@ namespace GUI_Meas_Demo.ViewModel
             foreach (var item in SerialPort.GetPortNames())
             {
                 this._comportList.Add(item);
+                Notification.Create();
             }
 
-            if (_comportList.Count <= 0) { Notification.Show("Error", "No comports found! Please instert device", Notifications.Wpf.NotificationType.Error); }
+            if (_comportList.Count <= 0) { /*Notification.Show("Error", "No comports found! Please instert device", Notifications.Wpf.NotificationType.Error); */}
+            else { _isButtonEnabled = true;}
         }
 
         #region ctor

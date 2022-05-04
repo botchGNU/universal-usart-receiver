@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI_Meas_Demo.View" 
              mc:Ignorable="d"
+             xmlns:behaviours="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              d:DesignHeight="400" d:DesignWidth="400">
     <Grid Height="160"
@@ -29,8 +30,13 @@
 
         <ListBox Grid.Row="2"
                  ItemsSource="{Binding ComportList}"
-                 SelectedItem="{Binding ListBoxCurrentSelected}"
-                 />
+                 SelectedItem="{Binding ListBoxCurrentSelected}">
+            <behaviours:Interaction.Triggers>
+                <behaviours:EventTrigger EventName="Selected">
+                    <behaviours:InvokeCommandAction Command="{Binding SelectedCommand}" PassEventArgsToCommand="True"/>
+                </behaviours:EventTrigger>
+            </behaviours:Interaction.Triggers>
+        </ListBox>
 
         <Button Grid.Row="3"
                 Margin="5"
