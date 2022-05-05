@@ -35,6 +35,9 @@
                 <behaviours:EventTrigger EventName="Selected">
                     <behaviours:InvokeCommandAction Command="{Binding SelectedCommand}" PassEventArgsToCommand="True"/>
                 </behaviours:EventTrigger>
+                <behaviours:EventTrigger EventName="Loaded">
+                    <behaviours:InvokeCommandAction Command="{Binding StartupCommand}" PassEventArgsToCommand="True"/>
+                </behaviours:EventTrigger>
             </behaviours:Interaction.Triggers>
         </ListBox>
 

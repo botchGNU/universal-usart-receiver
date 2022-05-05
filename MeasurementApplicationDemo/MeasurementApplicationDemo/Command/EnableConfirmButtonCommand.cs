@@ -1,6 +1,4 @@
-﻿using GUI_Meas_Demo.Model;
-using GUI_Meas_Demo.ViewModel;
-using Notifications.Wpf;
+﻿using GUI_Meas_Demo.ViewModel;
 
 namespace GUI_Meas_Demo.Command
 {

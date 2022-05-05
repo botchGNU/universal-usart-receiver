@@ -20,8 +20,8 @@ namespace GUI_Meas_Demo.Model
                 $"German{SEP}{_timeStamp}{SEP}{_value}{SEP}";
         }
 
-        public string TimeStamp 
-        { 
+        public string TimeStamp
+        {
             get
             {
                 string stamp = _timeStamp.Second + ":" + _timeStamp.Millisecond;

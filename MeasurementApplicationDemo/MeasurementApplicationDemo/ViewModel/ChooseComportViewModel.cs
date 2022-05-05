@@ -23,11 +23,11 @@ namespace GUI_Meas_Demo.ViewModel
             foreach (var item in SerialPort.GetPortNames())
             {
                 this._comportList.Add(item);
-                Notification.Create();
+                //Notification.Create();
             }
 
             if (_comportList.Count <= 0) { /*Notification.Show("Error", "No comports found! Please instert device", Notifications.Wpf.NotificationType.Error); */}
-            else { _isButtonEnabled = true;}
+            else { _isButtonEnabled = true; }
         }
 
         #region ctor
@@ -37,6 +37,7 @@ namespace GUI_Meas_Demo.ViewModel
             UpdateComportList();
             SelectedCommand = new EnableConfirmButtonCommand(this);
             ConfirmCommand = new NavigateCommand(navigationStore, createDeviceSettingsViewModel);
+            StartupCommand = new StartupCommand();
         }
         #endregion
 
@@ -49,6 +50,8 @@ namespace GUI_Meas_Demo.ViewModel
         #region commands
         public ICommand ConfirmCommand { get; }
         public ICommand SelectedCommand { get; }
+
+        public ICommand StartupCommand { get; }
         #endregion
 
         #region properties

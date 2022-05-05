@@ -1,7 +1,6 @@
 ﻿using GUI_Meas_Demo.Command;
 using GUI_Meas_Demo.Model;
 using System;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,17 +27,17 @@ namespace GUI_Meas_Demo.ViewModel
         public ICommand ActionCommand { get; }
         #endregion
         #region properties
-        public SolidColorBrush ActionButtonColor 
-        { 
-            get => _actionButtonColor; 
+        public SolidColorBrush ActionButtonColor
+        {
+            get => _actionButtonColor;
             set
             {
                 _actionButtonColor = value;
                 OnPropertyChanged(nameof(ActionButtonColor));
             }
         }
-        public string ActionButtonContent 
-        { 
+        public string ActionButtonContent
+        {
             get => _actionButtonContent;
             set
             {
@@ -47,15 +46,15 @@ namespace GUI_Meas_Demo.ViewModel
             }
         }
 
-        public bool ExportEnabled 
-        { 
+        public bool ExportEnabled
+        {
             get => _exportEnabled;
             set
             {
                 _exportEnabled = value;
                 OnPropertyChanged(nameof(ExportEnabled));
             }
-        } 
+        }
 
         public ImageSource DisplayImageSource
         {

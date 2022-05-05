@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:behaviours="http://schemas.microsoft.com/xaml/behaviors"
-        Title="MainWindow" Height="400" Width="400"
+        Title="USART Measurement" Height="400" Width="400"
         SizeToContent="Manual">
 
     <behaviours:Interaction.Triggers>

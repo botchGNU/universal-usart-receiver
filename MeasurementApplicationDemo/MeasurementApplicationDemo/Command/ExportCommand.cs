@@ -1,7 +1,4 @@
 ﻿using GUI_Meas_Demo.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GUI_Meas_Demo.Command
 {
@@ -16,7 +13,7 @@ namespace GUI_Meas_Demo.Command
 
         public override void Execute(object parameter)
         {
-            ExportManager.AsExcelAsync(_measMan.MeasurementCollection);            
+            ExportManager.AsExcelAsync(_measMan.MeasurementCollection);
         }
 
     }

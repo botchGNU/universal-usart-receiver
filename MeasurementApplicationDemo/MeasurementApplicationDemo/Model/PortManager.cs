@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO.Ports;
 
 namespace GUI_Meas_Demo.Model
@@ -70,12 +71,13 @@ namespace GUI_Meas_Demo.Model
             {
                 Notification.Show("Error", "Port could not be opened!", Notifications.Wpf.NotificationType.Error);
             }
-            
+
         }
 
-        public int ReadChar()
+        public int ReadByte()
         {
-            return _port.ReadChar();
+            var result = _port.ReadByte();
+            return result;
         }
 
         public DeviceInfo Info { get => _info; set { _info = value; UpdateInfo(); } } //also updates port

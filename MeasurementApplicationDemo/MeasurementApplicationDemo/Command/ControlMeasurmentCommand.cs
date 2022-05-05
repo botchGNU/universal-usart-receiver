@@ -1,7 +1,5 @@
 ﻿using GUI_Meas_Demo.Model;
 using GUI_Meas_Demo.ViewModel;
-using System;
-using System.ComponentModel;
 using System.Windows.Media;
 
 namespace GUI_Meas_Demo.Command
@@ -18,16 +16,16 @@ namespace GUI_Meas_Demo.Command
 
         public override void Execute(object parameter)
         {
-            if (_measMan.IsRunning) 
-            { 
+            if (_measMan.IsRunning)
+            {
                 _measMan.StopMeasureThread();
                 _viewModel.ActionButtonColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#32CD32")); //green
                 _viewModel.ActionButtonContent = "Start Measurement";
                 _viewModel.ExportEnabled = true;
             }
-            else 
+            else
             {
-                _measMan.StartMeasureThread();  
+                _measMan.StartMeasureThread();
                 _viewModel.ActionButtonColor = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF4500")); //red
                 _viewModel.ActionButtonContent = "Stop Measurement";
                 _viewModel.ExportEnabled = false;

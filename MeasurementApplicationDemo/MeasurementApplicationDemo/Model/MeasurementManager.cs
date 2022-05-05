@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace GUI_Meas_Demo.Model
 {
@@ -48,13 +45,13 @@ namespace GUI_Meas_Demo.Model
             {
                 try
                 {
-                    char receivedValue = (char)_portMan.ReadChar();
+                    int receivedValue = _portMan.ReadByte();
                     var newMeas = new Measurement(receivedValue);
                     MeasurementCollection.Add(newMeas);
                 }
                 catch (Exception e)
                 {
-                    Notification.Show("Error", e.Message , Notifications.Wpf.NotificationType.Error);
+                    Notification.Show("Error", e.Message, Notifications.Wpf.NotificationType.Error);
                     StopMeasureThread();
                 }
             }
@@ -75,7 +72,7 @@ namespace GUI_Meas_Demo.Model
             }
         }
 
- 
+
 
         #endregion
 

@@ -2,11 +2,11 @@
 
 namespace GUI_Meas_Demo.Command
 {
-    internal class CloseCommand : CommandBase
+    internal class StartupCommand : CommandBase
     {
         public override void Execute(object parameter)
         {
-            Notification.Dispose();
+            Notification.Create();
         }
     }
 }

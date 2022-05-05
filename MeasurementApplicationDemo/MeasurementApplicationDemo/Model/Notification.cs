@@ -58,7 +58,7 @@ namespace GUI_Meas_Demo.Model
             {
 
             }
-            
+
         }
     }
 }
