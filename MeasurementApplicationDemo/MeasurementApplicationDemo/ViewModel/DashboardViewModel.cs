@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_Meas_Demo.ViewModel
 {
-    class DashboardViewModel : ViewModelBase
+    internal class DashboardViewModel : ViewModelBase
     {
         private MeasurementManager _measMan;
         private SolidColorBrush _actionButtonColor;

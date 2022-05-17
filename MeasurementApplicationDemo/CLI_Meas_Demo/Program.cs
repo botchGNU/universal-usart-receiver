@@ -5,9 +5,9 @@ using System.Threading;
 
 namespace CLI_Meas_Demo
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //set variables MANUALLY
             int baudRate = 9600;

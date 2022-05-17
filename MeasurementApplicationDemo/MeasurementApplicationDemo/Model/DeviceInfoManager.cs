@@ -8,7 +8,7 @@ namespace GUI_Meas_Demo.Model
     /// class to manage DeviceInfo files (load / save)
     /// </summary>
 
-    class DeviceInfoManager
+    internal class DeviceInfoManager
     {
         private static JsonSerializerOptions _options = new JsonSerializerOptions { WriteIndented = true, IgnoreNullValues = false };
 

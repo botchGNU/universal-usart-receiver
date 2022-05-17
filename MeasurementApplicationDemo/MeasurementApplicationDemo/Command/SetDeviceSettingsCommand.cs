@@ -2,7 +2,7 @@
 
 namespace GUI_Meas_Demo.Command
 {
-    class SetDeviceSettingsCommand : CommandBase
+    internal class SetDeviceSettingsCommand : CommandBase
     {
         private DeviceSettingsViewModel _deviceSettingsViewModel;
 

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace GUI_Meas_Demo.Model
 {
-    class SaveManager
+    internal class SaveManager
     {
         private ObservableCollection<Measurement> _collection;
 

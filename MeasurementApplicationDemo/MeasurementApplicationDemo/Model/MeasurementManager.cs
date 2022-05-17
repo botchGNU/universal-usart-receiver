@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace GUI_Meas_Demo.Model
 {
-    class MeasurementManager : INotifyPropertyChanged
+    internal class MeasurementManager : INotifyPropertyChanged
     {
         #region fields
         private ObservableCollection<Measurement> _measColl;

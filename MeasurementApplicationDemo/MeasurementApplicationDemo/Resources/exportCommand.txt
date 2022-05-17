@@ -1,0 +1,4 @@
+dotnet publish --self-contained --runtime win-x64 --configuration Release --output AppName GUI_Meas_Demo.csproj -p:PublishSingleFile=true 
+
+
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true

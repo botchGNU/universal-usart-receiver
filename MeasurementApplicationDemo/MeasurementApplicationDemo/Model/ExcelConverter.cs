@@ -39,7 +39,7 @@ namespace CLI_Excel_Demo
                 ws.Cells["A1:B1"].Merge = true;
                 ws.Column(1).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 ws.Row(1).Style.Font.Size = 16;
-                ws.Row(1).Style.Font.Color.SetColor(Color.LightBlue);
+                ws.Row(1).Style.Font.Color.SetColor(Color.DarkBlue);
 
                 ws.Row(2).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 ws.Row(2).Style.Font.Bold = true;

@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace GUI_Meas_Demo.Command
 {
-    class ControlMeasurmentCommand : CommandBase
+    internal class ControlMeasurmentCommand : CommandBase
     {
         private MeasurementManager _measMan;
         private DashboardViewModel _viewModel;

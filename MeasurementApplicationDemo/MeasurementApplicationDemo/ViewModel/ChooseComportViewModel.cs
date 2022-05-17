@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
 {
-    class ChooseComportViewModel : ViewModelBase, IConfirmButtonViewModel
+    internal class ChooseComportViewModel : ViewModelBase, IConfirmButtonViewModel
     {
         #region fields
         private ObservableCollection<string> _comportList = new ObservableCollection<string>();
