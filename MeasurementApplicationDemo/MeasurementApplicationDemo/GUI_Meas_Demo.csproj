@@ -4,10 +4,16 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\icon_big.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resources\donotunplug.jpg" />
+    <None Remove="Resources\icon_big.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon_big.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +21,11 @@
     <PackageReference Include="HandyControl" Version="3.3.0" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Notifications.Wpf" Version="0.1.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.115.5" />
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.115.5" />
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
     <PackageReference Include="ToastNotifications" Version="2.5.1" />
     <PackageReference Include="ToastNotifications.Messages" Version="2.5.1" />
