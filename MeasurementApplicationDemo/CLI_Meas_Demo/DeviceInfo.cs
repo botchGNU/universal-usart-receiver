@@ -2,7 +2,7 @@
 
 namespace GUI_Meas_Demo.Model
 {
-    class DeviceInfo
+    internal class DeviceInfo
     {
         private int _baudRate;
         private StopBits _stopBits;

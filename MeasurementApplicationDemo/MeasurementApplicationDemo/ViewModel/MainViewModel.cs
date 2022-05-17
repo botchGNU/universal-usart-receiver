@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
 {
-    class MainViewModel : ViewModelBase
+    internal class MainViewModel : ViewModelBase
     {
         private readonly NavigationStore _navigationStore;
 

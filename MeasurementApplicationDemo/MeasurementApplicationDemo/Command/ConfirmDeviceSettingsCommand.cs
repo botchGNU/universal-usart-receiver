@@ -2,7 +2,7 @@
 
 namespace GUI_Meas_Demo.Command
 {
-    class ConfirmDeviceSettingsCommand : CommandBase
+    internal class ConfirmDeviceSettingsCommand : CommandBase
     {
         public override void Execute(object parameter)
         {

@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace GUI_Meas_Demo.Model
 {
-    class DeviceInfoManager
+    internal class DeviceInfoManager
     {
         private static JsonSerializerOptions _options = new JsonSerializerOptions { WriteIndented = true, IgnoreNullValues = false };
 

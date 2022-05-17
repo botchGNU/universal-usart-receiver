@@ -17,9 +17,9 @@ namespace GUI_Meas_Demo.Model
         public static async void ExportAsync(ObservableCollection<Measurement> measList)
         {
             SaveFileDialog savefile = new SaveFileDialog();
-            string filenameDate = DateTime.Now.Day + "-" + 
-                                  DateTime.Now.Month + "-" + 
-                                  DateTime.Now.Year + "_" + 
+            string filenameDate = DateTime.Now.Day + "-" +
+                                  DateTime.Now.Month + "-" +
+                                  DateTime.Now.Year + "_" +
                                   DateTime.Now.Hour + "-" +
                                   DateTime.Now.Minute + "-" +
                                   DateTime.Now.Second + "_" +
@@ -80,7 +80,7 @@ namespace GUI_Meas_Demo.Model
         }
 
 
-        
+
         private static SQLiteConnection CreateSQLiteConnection(string fileName)
         {
             SQLiteConnection conn = new SQLiteConnection($"Data Source={fileName}");
@@ -95,7 +95,7 @@ namespace GUI_Meas_Demo.Model
 
             return conn;
         }
-        
+
         #region export Tasks
         public static async Task ExportXAMLAsync(FileInfo fileName, ObservableCollection<Measurement> measList)
         {
@@ -198,7 +198,7 @@ namespace GUI_Meas_Demo.Model
                 {
                     cmd.CommandText = $"INSERT INTO " +
                                     $"measurements(timestamp, value) " +
-                                    $"VALUES('{item.TimeStamp}', {(int)item.Value})";
+                                    $"VALUES('{item.TimeStamp}', {item.Value})";
                     cmd.ExecuteNonQuery();
                 }
 

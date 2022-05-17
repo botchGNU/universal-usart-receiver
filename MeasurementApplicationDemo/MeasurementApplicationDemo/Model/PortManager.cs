@@ -5,11 +5,14 @@ namespace GUI_Meas_Demo.Model
 {
     public class PortManager
     {
+        #region fields
         private bool _isDeviceInfoUpdated = false;
         private DeviceInfo _info;
         private SerialPort _port = new SerialPort();
+        #endregion
 
-        void UpdateInfo()
+        #region methods
+        private void UpdateInfo()
         {
             try
             {
@@ -78,9 +81,12 @@ namespace GUI_Meas_Demo.Model
             var result = _port.ReadByte();
             return result;
         }
+        #endregion
 
+        #region properties
         public DeviceInfo Info { get => _info; set { _info = value; UpdateInfo(); } } //also updates port
         public string PortName { get => _port?.PortName; set => _port.PortName = value; }
         public bool IsDeviceInfoUpdated { get => _isDeviceInfoUpdated; set => _isDeviceInfoUpdated = value; }
+        #endregion
     }
 }

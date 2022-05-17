@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace GUI_Meas_Demo.ViewModel
 {
-    class DeviceSettingsViewModel : ViewModelBase, IConfirmButtonViewModel
+    internal class DeviceSettingsViewModel : ViewModelBase, IConfirmButtonViewModel
     {
         #region fields
         private PortManager _portManager;

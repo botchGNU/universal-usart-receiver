@@ -2,6 +2,8 @@
 
 A universal GUI measurement tool for various devices data via USART
 
+![](https://raw.githubusercontent.com/botchGNU/universal-usart-receiver/main/Documentation/Images/application.png)
+
 ## Usage
 
 1. Run application
@@ -35,15 +37,15 @@ These setting-files can be imported in the 2nd step of the startup-configuration
 
 - Excel
 
-  ![](Documentation\Images\excel.png)
+  ![](https://raw.githubusercontent.com/botchGNU/universal-usart-receiver/main/Documentation/Images/excel.png)
 
 - CSV
 
-  ![](Documentation\Images\csv.png)
+  ![](https://raw.githubusercontent.com/botchGNU/universal-usart-receiver/main/Documentation/Images/csv.png)
 
 - SQLite Database
 
-  ![](Documentation\Images\sqlite.png)
+  ![](https://raw.githubusercontent.com/botchGNU/universal-usart-receiver/main/Documentation/Images/sqlite.png)
   
 - JSON
 

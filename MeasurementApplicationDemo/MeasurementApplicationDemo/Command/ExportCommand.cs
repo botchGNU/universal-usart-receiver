@@ -2,7 +2,7 @@
 
 namespace GUI_Meas_Demo.Command
 {
-    class ExportCommand : CommandBase
+    internal class ExportCommand : CommandBase
     {
         private MeasurementManager _measMan;
 
