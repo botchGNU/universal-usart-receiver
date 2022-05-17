@@ -15,8 +15,13 @@
 - [X] Import device settings
 - [X] Read data
 - [X] Pause reading data
-- [X] Export data as excel
-- [ ] Chart
+- [X] Export data as ...
+	- [X] Excel
+	- [X] CSV
+	- [X] Binary
+	- [ ] XAML
+	- [X] JSON 
+- [X] Excel Chart
 
 ## Firmware uC
 
@@ -171,5 +176,40 @@
 	- fixed date aligment
 	- merge open pull requests
 
+## 2022-05-25 
 
+### Tim
+- [Desktop] Add chart to excel
+  - Auto allign
+  - Auto get values
+
+## 2022-06-02
+
+### Tim
+- [Desktop] Export as
+  - CSV
+  - SQLite Database
+  - Binary
+  - JSON
+
+## 2022-06-10
+
+### Tim
+- [Desktop] Export notification
+  - Success / Error
+
+- [Desktop] Bug fixing
+  - CSV alligment
+  - Code cleanup
+
+## 2022-06-17
+
+### Tim
+
+- [Desktop] Update Export
+  - Open file after export
+  - TimeStamp as filename
+  - create application icon
+  
+  
 

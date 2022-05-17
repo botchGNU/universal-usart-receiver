@@ -2,6 +2,7 @@
 
 namespace GUI_Meas_Demo.Model
 {
+    [Serializable]
     public class Measurement
     {
         private int _value;
@@ -17,7 +18,7 @@ namespace GUI_Meas_Demo.Model
         public string Serialize()
         {
             return
-                $"German{SEP}{_timeStamp}{SEP}{_value}{SEP}";
+                $"{_timeStamp}{SEP}{_value}{SEP}";
         }
 
         public string TimeStamp
@@ -29,6 +30,7 @@ namespace GUI_Meas_Demo.Model
             }
         }
         //private DateTime TimeStamp { get => _timeStamp; }
+
         public int Value { get => _value; }
     }
 }

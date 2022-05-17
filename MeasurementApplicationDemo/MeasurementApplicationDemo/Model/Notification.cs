@@ -60,5 +60,18 @@ namespace GUI_Meas_Demo.Model
             }
 
         }
+
+        public static void PrintFileMessage(bool success, string fileName)
+        {
+            if (success)
+            {
+                Notification.Show("Success", "Export of " + fileName + " was successsfull", Notifications.Wpf.NotificationType.Success);
+            }
+            else
+            {
+                Notification.Show("Error", "Export of " + fileName + " was unsuccesssfull", Notifications.Wpf.NotificationType.Error);
+            }
+        }
+
     }
 }

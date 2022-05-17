@@ -13,7 +13,7 @@ namespace GUI_Meas_Demo.Command
 
         public override void Execute(object parameter)
         {
-            ExportManager.AsExcelAsync(_measMan.MeasurementCollection);
+            ExportManager.ExportAsync(_measMan.MeasurementCollection);
         }
 
     }
