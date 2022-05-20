@@ -1,6 +1,6 @@
 # Universal USART Measurement Receiver
 
-A universal GUI measurement tool for various devices data via USART
+A universal GUI measurement tool for various devices 
 
 ![](https://raw.githubusercontent.com/botchGNU/universal-usart-receiver/main/Documentation/Images/application.png)
 
