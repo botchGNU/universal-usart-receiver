@@ -20,7 +20,7 @@ A universal GUI measurement tool for various devices
 
 
 ## How do I set up the application for my device?
-This tool uses json files in order to store device-settings. The following is an example for the device settings used for testing.
+This tool uses json files in order to store device-settings. The following is an example used for testing.
 
 ````json
 {
@@ -31,7 +31,7 @@ This tool uses json files in order to store device-settings. The following is an
 }
 ````
 
-These setting-files can be imported in the 2nd step of the startup-configuration
+These settings-files can be imported in the 2nd step of the startup-configuration
 
 ## Export Examples
 
